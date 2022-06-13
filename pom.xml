@@ -1,0 +1,129 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.6</version>		
+	</parent>
+	<groupId>com.dedalow.cad</groupId>
+	<artifactId>monolithic-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>monolithic-parent</name>
+	<description>Monolithic Parent</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<compiler.version>1.8</compiler.version>
+		<micro.version>0.0.1-SNAPSHOT</micro.version>
+		<mapstruct.version>1.3.1.Final</mapstruct.version>
+		<jpamodelgen.version>5.4.6.Final</jpamodelgen.version>
+		<google.guava>28.2-jre</google.guava>
+		<springfox-swagger>2.9.2</springfox-swagger>
+		<maven.compiler.plugin>3.8.1</maven.compiler.plugin>
+		<build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
+		<spring-cloud.version>2020.0.4</spring-cloud.version>
+		<spring-security-config.version>5.2.2.RELEASE</spring-security-config.version>
+		<spring-security-oauth2.version>2.3.5.RELEASE</spring-security-oauth2.version>
+		<spring-security-oauth2-autoconfigure.version>2.1.8.RELEASE</spring-security-oauth2-autoconfigure.version>
+		<jjwt.version>0.5.1</jjwt.version>
+		<lombok.version>1.18.16</lombok.version>
+		<log4j.version>1.2.17</log4j.version>
+		<commons-io.version>2.11.0</commons-io.version>
+		<json.version>20190722</json.version>
+		<org.everit.json.schema.version>1.3.0</org.everit.json.schema.version>
+	</properties>	
+
+	<modules>		
+		<module>commons</module>
+		<module>core</module>
+		<module>api</module>
+	</modules>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bootstrap</artifactId>
+		</dependency>
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mapstruct</groupId>
+				<artifactId>mapstruct</artifactId>
+				<version>${mapstruct.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-jpamodelgen</artifactId>
+				<version>${jpamodelgen.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${google.guava}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>${springfox-swagger}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+				<version>${springfox-swagger}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>${build-helper-maven-plugin.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt</artifactId>
+				<version>${jjwt.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>commons-io</groupId>
+			    <artifactId>commons-io</artifactId>
+			    <version>${commons-io.version}</version>
+			</dependency>
+
+			<dependency>
+			    <groupId>org.json</groupId>
+			    <artifactId>json</artifactId>
+			    <version>${json.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.everit.json</groupId>
+			    <artifactId>org.everit.json.schema</artifactId>
+			    <version>${org.everit.json.schema.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
