@@ -1,0 +1,13 @@
+spring: 
+   main:
+    allow-bean-definition-overriding: true
+server:
+  port: ${SERVER_PORT:8080}
+  max-http-header-size: 65536
+  servlet:
+    context-path: /backend
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,metrics,health,actuator,refresh

@@ -1,0 +1,12 @@
+
+spring:
+  application:
+    name: monolithic-api
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+api:
